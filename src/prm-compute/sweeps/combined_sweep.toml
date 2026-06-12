@@ -1,0 +1,2036 @@
+# === Sweeps from canopy ===
+
+# --- Baselines ---
+
+[[sweeps]]
+name = "[canopy] Baseline K-Nearest"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Baseline Distance"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Connectivity ---
+
+[[sweeps]]
+name = "[canopy] Connectivity K-Nearest (k=2)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 2
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Connectivity K-Nearest (k=4)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 4
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Connectivity Distance (d=0.175)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.175
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Connectivity Distance (d=0.225)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.225
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Pathfinding Heuristic ---
+
+[[sweeps]]
+name = "[canopy] Heuristic Joint-Space (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Heuristic Joint-Space (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+# --- Impact of Cycle Avoidance ---
+
+[[sweeps]]
+name = "[canopy] Cycle Avoidance True (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Cycle Avoidance True (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Density ---
+
+[[sweeps]]
+name = "[canopy] Density 50 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Density 50 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Density 200 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Density 200 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Strategy ---
+
+[[sweeps]]
+name = "[canopy] Sampling Gaussian (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Gaussian (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Gaussian (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Gaussian (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Gaussian (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Gaussian (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Bridge (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Bridge (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Bridge (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Bridge (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Bridge (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[canopy] Sampling Bridge (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "canopy/robot.json"
+obstacle_config_file = "canopy/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+
+# === Sweeps from choke_point ===
+
+# --- Baselines ---
+
+[[sweeps]]
+name = "[choke_point] Baseline K-Nearest"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Baseline Distance"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Connectivity ---
+
+[[sweeps]]
+name = "[choke_point] Connectivity K-Nearest (k=2)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 2
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Connectivity K-Nearest (k=4)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 4
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Connectivity Distance (d=0.175)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.175
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Connectivity Distance (d=0.225)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.225
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Pathfinding Heuristic ---
+
+[[sweeps]]
+name = "[choke_point] Heuristic Joint-Space (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Heuristic Joint-Space (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+# --- Impact of Cycle Avoidance ---
+
+[[sweeps]]
+name = "[choke_point] Cycle Avoidance True (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Cycle Avoidance True (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Density ---
+
+[[sweeps]]
+name = "[choke_point] Density 50 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Density 50 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Density 200 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Density 200 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Strategy ---
+
+[[sweeps]]
+name = "[choke_point] Sampling Gaussian (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Gaussian (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Gaussian (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Gaussian (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Gaussian (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Gaussian (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Bridge (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Bridge (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Bridge (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Bridge (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Bridge (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[choke_point] Sampling Bridge (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "choke_point/robot.json"
+obstacle_config_file = "choke_point/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+
+# === Sweeps from clutter ===
+
+# --- Baselines ---
+
+[[sweeps]]
+name = "[clutter] Baseline K-Nearest"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Baseline Distance"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Connectivity ---
+
+[[sweeps]]
+name = "[clutter] Connectivity K-Nearest (k=2)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 2
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Connectivity K-Nearest (k=4)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 4
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Connectivity Distance (d=0.175)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.175
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Connectivity Distance (d=0.225)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.225
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Pathfinding Heuristic ---
+
+[[sweeps]]
+name = "[clutter] Heuristic Joint-Space (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Heuristic Joint-Space (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+# --- Impact of Cycle Avoidance ---
+
+[[sweeps]]
+name = "[clutter] Cycle Avoidance True (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Cycle Avoidance True (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Density ---
+
+[[sweeps]]
+name = "[clutter] Density 50 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Density 50 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Density 200 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Density 200 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Strategy ---
+
+[[sweeps]]
+name = "[clutter] Sampling Gaussian (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Gaussian (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Gaussian (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Gaussian (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Gaussian (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Gaussian (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Bridge (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Bridge (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Bridge (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Bridge (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Bridge (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[clutter] Sampling Bridge (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "clutter/robot.json"
+obstacle_config_file = "clutter/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+
+# === Sweeps from three_hubs ===
+
+# --- Baselines ---
+
+[[sweeps]]
+name = "[three_hubs] Baseline K-Nearest"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Baseline Distance"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Connectivity ---
+
+[[sweeps]]
+name = "[three_hubs] Connectivity K-Nearest (k=2)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 2
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Connectivity K-Nearest (k=4)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 4
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Connectivity Distance (d=0.175)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.175
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Connectivity Distance (d=0.225)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.225
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Pathfinding Heuristic ---
+
+[[sweeps]]
+name = "[three_hubs] Heuristic Joint-Space (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Heuristic Joint-Space (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "joint-space"
+num_restarts = 100
+
+# --- Impact of Cycle Avoidance ---
+
+[[sweeps]]
+name = "[three_hubs] Cycle Avoidance True (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Cycle Avoidance True (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = true
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Density ---
+
+[[sweeps]]
+name = "[three_hubs] Density 50 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Density 50 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 50
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Density 200 (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Density 200 (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 200
+sampling_strategy = "uniform"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+# --- Impact of Sampling Strategy ---
+
+[[sweeps]]
+name = "[three_hubs] Sampling Gaussian (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Gaussian (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Gaussian (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Gaussian (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Gaussian (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Gaussian (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "gaussian"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Bridge (sigma=0.04) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Bridge (sigma=0.04) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.04
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Bridge (sigma=0.05) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Bridge (sigma=0.05) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.05
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Bridge (sigma=0.06) (K-Nearest)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "k-nearest"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+[[sweeps]]
+name = "[three_hubs] Sampling Bridge (sigma=0.06) (Distance)"
+prm_generations = 1000
+paths_per_prm = 1000
+robot_config_file = "three_hubs/robot.json"
+obstacle_config_file = "three_hubs/obstacles.json"
+[sweeps.sampling_config]
+num_samples = 100
+sampling_strategy = "bridge"
+sigma = 0.06
+[sweeps.connection_config]
+strategy = "distance"
+k = 3
+d = 0.2
+avoidCycles = false
+[sweeps.planning_config]
+heuristic = "none"
+num_restarts = 100
+
+
